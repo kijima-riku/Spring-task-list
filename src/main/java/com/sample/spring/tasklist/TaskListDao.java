@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 @Service
 public class TaskListDao {
@@ -40,5 +39,10 @@ public class TaskListDao {
                 )).toList();
 
         return taskItems;
+    }
+
+    public int delete(String id) {
+        int number = jdbcTemplate.update("DELETE FROM tasklist WHERE id = ?", id);
+        return number;
     }
 }
