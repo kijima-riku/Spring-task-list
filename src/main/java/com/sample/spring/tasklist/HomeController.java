@@ -54,4 +54,10 @@ public class HomeController {
         dao.update(taskItem);
         return "redirect:/list";
     }
+
+    @RequestMapping(value = "/toggleDone")
+    String toggleDone(@RequestParam("id") String id) {
+        dao.updateDone(id);
+        return "redirect:/list";
+    }
 }

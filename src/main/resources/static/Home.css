@@ -126,3 +126,75 @@ h1 {
 .tasklist input[type="submit"][value="削除"]:hover {
     background-color: #e53935;
 }
+
+/* 更新用モーダルのスタイル */
+.modal {
+    display: none; /* デフォルトでは非表示 */
+    position: fixed; /* 画面に固定 */
+    z-index: 1000; /* 他の要素より前面に表示 */
+    left: 0;
+    top: 0;
+    width: 100%; /* 全幅 */
+    height: 100%; /* 全高 */
+    overflow: auto; /* 必要に応じてスクロール */
+    background-color: rgba(0, 0, 0, 0.4); /* 背景の半透明 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* 更新フォームのスタイル */
+#updateForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#updateForm input[type="text"],
+#updateForm input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#updateForm input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#updateForm input[type="submit"]:hover {
+    background-color: #45a049;
+}
