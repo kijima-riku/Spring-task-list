@@ -54,4 +54,12 @@ public class TaskListDao {
         );
         return number;
     }
+
+    public int updateDone(String id) {
+        int number = jdbcTemplate.update(
+                "UPDATE tasklist SET done = NOT done WHERE id = ?"
+                , id
+        );
+        return number;
+    }
 }

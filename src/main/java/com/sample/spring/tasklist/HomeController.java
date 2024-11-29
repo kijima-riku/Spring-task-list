@@ -1,6 +1,7 @@
 package com.sample.spring.tasklist;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,6 +53,12 @@ public class HomeController {
                       @RequestParam("done") boolean done) {
         TaskItem taskItem = new TaskItem(id, task, deadline, done);
         dao.update(taskItem);
+        return "redirect:/list";
+    }
+
+    @RequestMapping(value = "/toggleDone")
+    String toggleDone(@RequestParam("id") String id) {
+        dao.updateDone(id);
         return "redirect:/list";
     }
 }
